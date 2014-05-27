@@ -6,9 +6,7 @@ class Role < ActiveRecord::Base
   accepts_nested_attributes_for :permissions
 
   scopify
-
-  def self.names
-    scoped.map(&:name)
-  end
+  
+  include Contextify::Role
 end
 
