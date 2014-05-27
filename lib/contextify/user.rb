@@ -6,7 +6,7 @@ module Contextify
     # @param [String] name the name of the role
     #
     def set_role(name)
-      Role.where(name: name.to_s).first_or_create!.tap do |role|
+      ::Role.where(name: name.to_s).first_or_create!.tap do |role|
         self.role = role
       end
     end
@@ -37,7 +37,7 @@ module Contextify
       context = role_name = nil
       if args.size == 1
         first_arg = args.first
-        if (first_arg = args.first).is_a?(Context)
+        if (first_arg = args.first).is_a?(::Context)
           context = first_arg
         else
           role_name = first_arg
@@ -49,7 +49,7 @@ module Contextify
         contexts << context
         save!
       else
-        role = Role.where(name: role_name.to_s).first_or_create!
+        role = ::Role.where(name: role_name.to_s).first_or_create!
         context = contexts.create!(role: role, entity: entity)
       end
       context.tap do |context|
