@@ -1,4 +1,7 @@
-module Contextify:User
+module Contextify
+  module User
+    include ActiveSupport::Concern
+
     # Set the user's role for the current context
     # @param [String] name the name of the role
     #
@@ -55,10 +58,11 @@ module Contextify:User
     end
 
     def switch_context!(context)
-    update_column(:current_context_id, context.id)
+      update_column(:current_context_id, context.id)
     end
 
-     private
+    private
+
     def set_default_context
       if current_context.blank? || !contexts.include?(current_context)
         switch_context!(contexts.first) unless contexts.empty?
@@ -77,4 +81,5 @@ module Contextify:User
         save!
       end
     end
+  end
 end

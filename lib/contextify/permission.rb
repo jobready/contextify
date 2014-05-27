@@ -1,4 +1,5 @@
 module Contextify::Permission
+  extend ActiveSupport::Concern
   # @return true if there is a Policy class available to complement the permission
   def has_policy?
     policy_class
