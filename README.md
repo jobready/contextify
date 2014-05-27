@@ -1,6 +1,6 @@
 # Contextify
 
-TODO: Write a gem description
+User Contexts/Roles/Permissions
 
 ## Installation
 
@@ -18,11 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+``ruby
+user = User.last
+user.add_context!(:admin, Entity.first)
+user.has_context?(:admin, Entity.first)
+user.entity
+user.has_role?(:admin)
+user.permissions
+user.has_permission?(:manage, User)
+```
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/contextify/fork )
+1. Fork it ( http://github.com/jobready/contextify/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
