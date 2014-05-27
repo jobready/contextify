@@ -1,6 +1,9 @@
 require "contextify/version"
 require "contextify/railtie"
 require "contextify/context"
+require "contextify/user"
+require "contextify/role"
+require "contextify/permission"
 
 module Contextify
   class NoCurrentContext < StandardError
