@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-``ruby
+```ruby
 user = User.last
 user.add_context!(:admin, Entity.first)
 user.has_context?(:admin, Entity.first)
