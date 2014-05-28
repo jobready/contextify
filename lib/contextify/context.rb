@@ -9,9 +9,9 @@ module Contextify
       def self.for(_entity)
         # TODO: Spec this
         if _entity.present?
-          where { entity == _entity }.first
+          first
         else
-          where { entity_id == nil }.first
+          where(entity_id:nil).first
         end
       end
 
@@ -27,7 +27,7 @@ module Contextify
     end
 
     # FIXME: While this is an improvement on earlier designs
-    # it probably should be more genericised such that 
+    # it probably should be more genericised such that
     # there are only roles such as admin, officer etc
     # and that these behave differently in different contexts
     # TODO: Spec this
