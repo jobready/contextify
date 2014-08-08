@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Contextify::VERSION
   spec.authors       = ["John D'Agostino"]
   spec.email         = ["john.dagostino@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Roles / Permissions / User switching for Rails}
+  spec.description   = %q{Roles, Permissions, User switching}
+  spec.homepage      = "http://github.com/jobready/contextify"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -19,5 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_dependency "activesupport"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rails", ">= 4.0"
 end
