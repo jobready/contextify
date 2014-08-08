@@ -1,4 +1,4 @@
-module Contextify::Permission
+module Copper::Permission
   extend ActiveSupport::Concern
 
   class Naming

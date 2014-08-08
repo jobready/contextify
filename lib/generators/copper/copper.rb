@@ -1,12 +1,12 @@
-module Contextify
+module Conpper
   module Generators
-    class ContextifyGenerator < Rails::Generators::NamedBase
+    class CopperGenerator < Rails::Generators::NamedBase
       Rails::Generators::ResourceHelpers
 
       source_root File.expand_path('../templates', __FILE__)
       argument :user_cname, :type => :string, :default => "User"
 
-      namespace :contextify
+      namespace :copper
       hook_for :orm, :required => true
 
       desc "Generates a model with the given NAME and a migration file."
@@ -18,7 +18,7 @@ module Contextify
       end
 
       def inject_user_class
-        invoke "contextify:user", [ user_cname, class_name ], :orm => options.orm
+        invoke "copper:user", [ user_cname, class_name ], :orm => options.orm
       end
 
       def show_readme
