@@ -1,6 +1,5 @@
-module Contextify::Permission
-  extend ActiveSupport::Concern
-
+module Copper::Permission
+  
   class Naming
     def self.action_class_name(type, action)
       [action.camelize, type, 'Policy'].join
