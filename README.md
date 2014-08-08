@@ -1,12 +1,12 @@
-# Contextify
+# Copper
 
-User Contexts/Roles/Permissions
+User Permissions and Policies. Named after the aussie word for police officer (https://www.youtube.com/watch?v=tKNOgX-u8ao)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'contextify'
+    gem 'copper'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install contextify
+    $ gem install copper
 
 ## Permission module and Policies
 
@@ -27,7 +27,7 @@ the `object_type` and `action_name`.
 For example:
 
     class Permission < ActiveRecord::Base
-      include Contextify::Permission
+      include Copper::Permission
     end
 
     Permission.create(
@@ -72,21 +72,9 @@ which will overide the type policy for the given action.
       # ...destroy specific logic
     end
 
-## Usage
-
-```ruby
-user = User.last
-user.add_context!(:admin, Entity.first)
-user.has_context?(:admin, Entity.first)
-user.entity
-user.has_role?(:admin)
-user.permissions
-user.has_permission?(:manage, User)
-```
-
 ## Contributing
 
-1. Fork it ( http://github.com/jobready/contextify/fork )
+1. Fork it ( http://github.com/jobready/copper/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

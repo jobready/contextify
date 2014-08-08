@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Contextify::Permission do
+describe Copper::Permission do
   class ManageUserPolicy; end
   class DeleteTaskPolicy; end
   class TaskPolicy; end
 
   class Permission
-    include Contextify::Permission
+    include Copper::Permission
   end
 
   let(:permission) { Permission.new }
