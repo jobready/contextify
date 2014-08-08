@@ -1,6 +1,5 @@
 module Copper::Permission
-  extend ActiveSupport::Concern
-
+  
   class Naming
     def self.action_class_name(type, action)
       [action.camelize, type, 'Policy'].join

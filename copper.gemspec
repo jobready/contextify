@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'contextify/version'
+require 'copper/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "copper"
@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
-  spec.add_development_dependency "rails", ">= 4.0"
+  spec.add_development_dependency "activesupport", ">= 4.0"
 end
